@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0939FC747B87F9650C031C /* Pods_Inflation_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D9D6B3B38ECFEBC75EAD6DC /* Pods_Inflation_Calculator.framework */; };
 		A917E5B920B08FC6001D6A98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A917E5B820B08FC6001D6A98 /* AppDelegate.swift */; };
-		A917E5BB20B08FC6001D6A98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A917E5BA20B08FC6001D6A98 /* ViewController.swift */; };
 		A917E5BE20B08FC6001D6A98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A917E5BC20B08FC6001D6A98 /* Main.storyboard */; };
 		A917E5C020B08FC7001D6A98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A917E5BF20B08FC7001D6A98 /* Assets.xcassets */; };
 		A917E5C320B08FC7001D6A98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A917E5C120B08FC7001D6A98 /* LaunchScreen.storyboard */; };
+		A917E5CF20B090AA001D6A98 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A917E5CE20B090AA001D6A98 /* ResultsTableViewController.swift */; };
+		A917E5D120B090C8001D6A98 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A917E5D020B090C8001D6A98 /* MainTableViewController.swift */; };
+		A9C0121A20B2E87E00F35877 /* ConversionTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0121920B2E87E00F35877 /* ConversionTables.swift */; };
+		A9C22B3720B0EFE800B610BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C22B3620B0EFE800B610BE /* Extensions.swift */; };
+		A9C22B3920B0FBE900B610BE /* ConversionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C22B3820B0FBE900B610BE /* ConversionHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049161AF6754839C96BF5E4F /* Pods-Inflation Calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inflation Calculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inflation Calculator/Pods-Inflation Calculator.release.xcconfig"; sourceTree = "<group>"; };
+		6D9D6B3B38ECFEBC75EAD6DC /* Pods_Inflation_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inflation_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8740BEF2C7A0B45D522C7FBD /* Pods-Inflation Calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inflation Calculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inflation Calculator/Pods-Inflation Calculator.debug.xcconfig"; sourceTree = "<group>"; };
 		A917E5B520B08FC6001D6A98 /* Inflation Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inflation Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A917E5B820B08FC6001D6A98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A917E5BA20B08FC6001D6A98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A917E5BD20B08FC6001D6A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A917E5BF20B08FC7001D6A98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A917E5C220B08FC7001D6A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A917E5C420B08FC7001D6A98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A917E5CE20B090AA001D6A98 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		A917E5D020B090C8001D6A98 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		A9C0121920B2E87E00F35877 /* ConversionTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTables.swift; sourceTree = "<group>"; };
+		A9C22B3620B0EFE800B610BE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A9C22B3820B0FBE900B610BE /* ConversionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0939FC747B87F9650C031C /* Pods_Inflation_Calculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B7EE313453F33C4F626BD79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D9D6B3B38ECFEBC75EAD6DC /* Pods_Inflation_Calculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A917E5AC20B08FC6001D6A98 = {
 			isa = PBXGroup;
 			children = (
 				A917E5B720B08FC6001D6A98 /* Inflation Calculator */,
 				A917E5B620B08FC6001D6A98 /* Products */,
+				EDC8A1A95B9459E444BB1437 /* Pods */,
+				6B7EE313453F33C4F626BD79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +78,26 @@
 			isa = PBXGroup;
 			children = (
 				A917E5B820B08FC6001D6A98 /* AppDelegate.swift */,
-				A917E5BA20B08FC6001D6A98 /* ViewController.swift */,
+				A917E5D020B090C8001D6A98 /* MainTableViewController.swift */,
+				A917E5CE20B090AA001D6A98 /* ResultsTableViewController.swift */,
+				A9C22B3820B0FBE900B610BE /* ConversionHelper.swift */,
+				A9C0121920B2E87E00F35877 /* ConversionTables.swift */,
+				A9C22B3620B0EFE800B610BE /* Extensions.swift */,
 				A917E5BC20B08FC6001D6A98 /* Main.storyboard */,
 				A917E5BF20B08FC7001D6A98 /* Assets.xcassets */,
 				A917E5C120B08FC7001D6A98 /* LaunchScreen.storyboard */,
 				A917E5C420B08FC7001D6A98 /* Info.plist */,
 			);
 			path = "Inflation Calculator";
+			sourceTree = "<group>";
+		};
+		EDC8A1A95B9459E444BB1437 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8740BEF2C7A0B45D522C7FBD /* Pods-Inflation Calculator.debug.xcconfig */,
+				049161AF6754839C96BF5E4F /* Pods-Inflation Calculator.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A917E5C720B08FC7001D6A98 /* Build configuration list for PBXNativeTarget "Inflation Calculator" */;
 			buildPhases = (
+				54FDACC7BDEF5E0B5DA82A04 /* [CP] Check Pods Manifest.lock */,
 				A917E5B120B08FC6001D6A98 /* Sources */,
 				A917E5B220B08FC6001D6A98 /* Frameworks */,
 				A917E5B320B08FC6001D6A98 /* Resources */,
+				909ABC27D1B6D3EC6DB1C486 /* [CP] Embed Pods Frameworks */,
+				DB5AE21EE90AF0B6DCE19C99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,12 +169,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		54FDACC7BDEF5E0B5DA82A04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Inflation Calculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		909ABC27D1B6D3EC6DB1C486 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Inflation Calculator/Pods-Inflation Calculator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inflation Calculator/Pods-Inflation Calculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB5AE21EE90AF0B6DCE19C99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inflation Calculator/Pods-Inflation Calculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A917E5B120B08FC6001D6A98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A917E5BB20B08FC6001D6A98 /* ViewController.swift in Sources */,
+				A9C22B3920B0FBE900B610BE /* ConversionHelper.swift in Sources */,
+				A917E5CF20B090AA001D6A98 /* ResultsTableViewController.swift in Sources */,
+				A9C22B3720B0EFE800B610BE /* Extensions.swift in Sources */,
+				A917E5D120B090C8001D6A98 /* MainTableViewController.swift in Sources */,
+				A9C0121A20B2E87E00F35877 /* ConversionTables.swift in Sources */,
 				A917E5B920B08FC6001D6A98 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,10 +377,11 @@
 		};
 		A917E5C820B08FC7001D6A98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8740BEF2C7A0B45D522C7FBD /* Pods-Inflation Calculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H3S663HM33;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = TNUJH53RR5;
 				INFOPLIST_FILE = "Inflation Calculator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -289,6 +389,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "vikings.Inflation-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b4bfa146-3bc0-41e4-99f3-bed6c497d571";
+				PROVISIONING_PROFILE_SPECIFIER = 1b2da5224189150d793a6f40ec77c83321924c8e;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -296,10 +398,11 @@
 		};
 		A917E5C920B08FC7001D6A98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 049161AF6754839C96BF5E4F /* Pods-Inflation Calculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H3S663HM33;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = TNUJH53RR5;
 				INFOPLIST_FILE = "Inflation Calculator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,6 +410,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "vikings.Inflation-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b4bfa146-3bc0-41e4-99f3-bed6c497d571";
+				PROVISIONING_PROFILE_SPECIFIER = 1b2da5224189150d793a6f40ec77c83321924c8e;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
