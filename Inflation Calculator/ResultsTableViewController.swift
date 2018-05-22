@@ -19,6 +19,7 @@ class ResultsTableViewController: UITableViewController {
     @IBOutlet weak var endYearAmount: UILabel!
     @IBOutlet weak var actualValueLabel: UILabel!
     @IBOutlet weak var actualValueAmount: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     
     //MARK: Segue data
     var amount : String?
@@ -58,10 +59,12 @@ class ResultsTableViewController: UITableViewController {
         startYearLabel.text = start
         endYearLabel.text = end
         actualValueLabel.text = end
-        startYearAmount.text = amount.currencyInputFormatting(currency: symbol)
+        let formattedAmount = amount.currencyInputFormatting(currency: symbol)
+        startYearAmount.text = formattedAmount
         
         let amountWithInflation = String(format:"%.2f", conversion.calcInflation(start: start, end: end, currency: curr, amount: amount))
-        endYearAmount.text = amountWithInflation.currencyInputFormatting(currency: symbol)
+        let formattedAmountWithInflation = amountWithInflation.currencyInputFormatting(currency: symbol)
+        endYearAmount.text = formattedAmountWithInflation
         //print(amountWithInflation)
         if curr=="ITL" {
             let liraToEur = String(
@@ -76,6 +79,7 @@ class ResultsTableViewController: UITableViewController {
                 self.actualValueAmount.text = "\(eurValue)"
             })
         }
+        detailLabel.text = "\(formattedAmount) in \(start) has the same purchasing power as \(formattedAmountWithInflation) in \(end)."
     }
     
 //    private func getInflationValueNet(amount:String, curr:String, start:String, end:String, index:String, symbol:String) {
