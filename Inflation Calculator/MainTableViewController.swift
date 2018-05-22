@@ -12,12 +12,13 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
 
     //MARK: UI elements
     @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var currencyPicker: UIPickerView!
+//    @IBOutlet weak var currencyPicker: UIPickerView!
     @IBOutlet weak var startDatePicker: UIPickerView!
     @IBOutlet weak var endDatePicker: UIPickerView!
+    @IBOutlet weak var currencySegment: UISegmentedControl!
     
     //MARK: Data sources
-    let currencyPickerData  = ["USD", "GBP", "ITL"]
+//    let currencyPickerData  = ["USD", "GBP", "ITL"]
     var startPickerData     = [Int](1774...2018)
     var endPickerData       = Array([Int](1774...2018).reversed())
     
@@ -28,7 +29,7 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         self.hideKeyboardWhenTappedAround()
         
         //Add data to currency picker
-        currencyPicker.delegate     = self
+//        currencyPicker.delegate     = self
         startDatePicker.delegate    = self
         endDatePicker.delegate      = self
         
@@ -44,28 +45,43 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     
     //MARK: Listeners
     @objc func amountTextFieldDidChange(_ textField: UITextField) {
-        let curr = currencyPickerData[currencyPicker.selectedRow(inComponent: 0)]
+//        let curr = currencyPickerData[currencyPicker.selectedRow(inComponent: 0)]
+        let curr = currencySegment.titleForSegment(at: currencySegment.selectedSegmentIndex)!
         if let amountString = textField.text?.currencyInputFormatting(currency: getIndexSymbol(curr:curr)[1]) {
             textField.text = amountString
         }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView==currencyPicker {
-            //selected currency
-            let curr = currencyPickerData[row]
-            
-            //change currency symbol in textview
-            if let amountString = amountTextField.text?.currencyInputFormatting(currency: getIndexSymbol(curr:curr)[1]) {
-                amountTextField.text = amountString
-            }
-            //change start date based on currency
-            let startDate = Int(getIndexSymbol(curr: curr)[2])
-            startPickerData     = [Int](startDate!...2018)
-            startDatePicker.reloadAllComponents()
-            endPickerData       = Array([Int](startDate!...2018).reversed())
-            endDatePicker.reloadAllComponents()
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        if pickerView==currencyPicker {
+//            //selected currency
+//            let curr = currencyPickerData[row]
+//
+//            //change currency symbol in textview
+//            if let amountString = amountTextField.text?.currencyInputFormatting(currency: getIndexSymbol(curr:curr)[1]) {
+//                amountTextField.text = amountString
+//            }
+//            //change start date based on currency
+//            let startDate = Int(getIndexSymbol(curr: curr)[2])
+//            startPickerData     = [Int](startDate!...2018)
+//            startDatePicker.reloadAllComponents()
+//            endPickerData       = Array([Int](startDate!...2018).reversed())
+//            endDatePicker.reloadAllComponents()
+//        }
+//    }
+    @IBAction func currencySegment(_ sender: UISegmentedControl) {
+        //selected currency
+        let curr = currencySegment.titleForSegment(at: currencySegment.selectedSegmentIndex)!
+
+        //change currency symbol in textview
+        if let amountString = amountTextField.text?.currencyInputFormatting(currency: getIndexSymbol(curr:curr)[1]) {
+            amountTextField.text = amountString
         }
+        //change start date based on currency
+        let startDate = Int(getIndexSymbol(curr: curr)[2])
+        startPickerData     = [Int](startDate!...2018)
+        startDatePicker.reloadAllComponents()
+        endPickerData       = Array([Int](startDate!...2018).reversed())
+        endDatePicker.reloadAllComponents()
     }
     
     //MARK: Private functions
@@ -112,8 +128,8 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView {
-        case currencyPicker:
-            return currencyPickerData.count
+//        case currencyPicker:
+//            return currencyPickerData.count
         case startDatePicker:
             return startPickerData.count
         case endDatePicker:
@@ -124,8 +140,8 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView {
-        case currencyPicker:
-            return currencyPickerData[row]
+//        case currencyPicker:
+//            return currencyPickerData[row]
         case startDatePicker:
             return String(startPickerData[row])
         case endDatePicker:
@@ -163,7 +179,8 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
             let end = String(endPickerData[endDatePicker.selectedRow(inComponent: 0)])
             
             let amount  = String((amountTextField.text?.replacingOccurrences(of: "\\.", with: "", options: .regularExpression).dropFirst(1))!)
-            let curr    = currencyPickerData[currencyPicker.selectedRow(inComponent: 0)]
+//            let curr    = currencyPickerData[currencyPicker.selectedRow(inComponent: 0)]
+            let curr = currencySegment.titleForSegment(at: currencySegment.selectedSegmentIndex)!
             let indice  = getIndexSymbol(curr:curr)[0]
             let symbol  = getIndexSymbol(curr:curr)[1]
             

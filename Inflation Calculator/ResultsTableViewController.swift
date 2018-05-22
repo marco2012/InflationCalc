@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+//import Alamofire
 
 class ResultsTableViewController: UITableViewController {
 
@@ -62,7 +62,7 @@ class ResultsTableViewController: UITableViewController {
         
         let amountWithInflation = String(format:"%.2f", conversion.calcInflation(start: start, end: end, currency: curr, amount: amount))
         endYearAmount.text = amountWithInflation.currencyInputFormatting(currency: symbol)
-        
+        //print(amountWithInflation)
         if curr=="ITL" {
             let liraToEur = String(
                 conversion.liraToEur(year: start, amount: amount))

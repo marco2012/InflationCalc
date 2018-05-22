@@ -48,22 +48,29 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Currency" id="P2j-Ho-dh3">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="6S2-O9-dT5">
-                                        <rect key="frame" x="0.0" y="165.5" width="375" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="6S2-O9-dT5">
+                                        <rect key="frame" x="0.0" y="165.5" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6S2-O9-dT5" id="bPg-Pn-G6Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXt-iD-KJ2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
-                                                </pickerView>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ljF-e4-EJl">
+                                                    <rect key="frame" x="16" y="13" width="343" height="29"/>
+                                                    <segments>
+                                                        <segment title="USD"/>
+                                                        <segment title="GBP"/>
+                                                        <segment title="ITL"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="currencySegment:" destination="Kxv-gt-fdC" eventType="valueChanged" id="Rhz-CM-VxO"/>
+                                                    </connections>
+                                                </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="WXt-iD-KJ2" firstAttribute="centerY" secondItem="bPg-Pn-G6Y" secondAttribute="centerY" id="BFm-SS-cta"/>
-                                                <constraint firstAttribute="trailing" secondItem="WXt-iD-KJ2" secondAttribute="trailing" id="cr3-mP-4vu"/>
-                                                <constraint firstItem="WXt-iD-KJ2" firstAttribute="leading" secondItem="bPg-Pn-G6Y" secondAttribute="leading" id="dlD-v4-a2M"/>
-                                                <constraint firstItem="WXt-iD-KJ2" firstAttribute="top" secondItem="bPg-Pn-G6Y" secondAttribute="top" id="x0f-Mt-7qQ"/>
+                                                <constraint firstItem="ljF-e4-EJl" firstAttribute="centerY" secondItem="bPg-Pn-G6Y" secondAttribute="centerY" id="5cc-6A-uuN"/>
+                                                <constraint firstItem="ljF-e4-EJl" firstAttribute="leading" secondItem="bPg-Pn-G6Y" secondAttribute="leadingMargin" id="DMU-5p-SaC"/>
+                                                <constraint firstItem="ljF-e4-EJl" firstAttribute="trailing" secondItem="bPg-Pn-G6Y" secondAttribute="trailingMargin" id="Mag-Kv-lpL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -72,14 +79,14 @@
                             <tableViewSection headerTitle="Date" id="5bL-ag-u8G">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="MmG-GZ-q8o">
-                                        <rect key="frame" x="0.0" y="341.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="276.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MmG-GZ-q8o" id="tao-Gn-ohf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heL-Lt-Jpm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="187" height="49.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="187" id="NnO-GK-zBq"/>
                                                     </constraints>
@@ -88,7 +95,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="END" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzN-dS-3cu">
-                                                    <rect key="frame" x="188" y="0.0" width="187" height="49.5"/>
+                                                    <rect key="frame" x="188" y="0.0" width="187" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -106,7 +113,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="162" id="fiS-or-pIp">
-                                        <rect key="frame" x="0.0" y="391.5" width="375" height="162"/>
+                                        <rect key="frame" x="0.0" y="326.5" width="375" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fiS-or-pIp" id="puX-f8-EBG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="161.5"/>
@@ -151,7 +158,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="amountTextField" destination="RIy-6B-FUC" id="tnh-TE-jMN"/>
-                        <outlet property="currencyPicker" destination="WXt-iD-KJ2" id="fHi-e4-ASx"/>
+                        <outlet property="currencySegment" destination="ljF-e4-EJl" id="Dst-lG-vjg"/>
                         <outlet property="endDatePicker" destination="5MT-m1-9AA" id="rfY-mc-rQk"/>
                         <outlet property="startDatePicker" destination="mt4-xC-Jas" id="Bfk-C6-IQC"/>
                     </connections>
