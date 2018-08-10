@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     //MARK: UI elements
     @IBOutlet weak var amountTextField: UITextField!
@@ -36,6 +36,8 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         //Add listener to amount text field
         amountTextField.addTarget(self, action: #selector(amountTextFieldDidChange), for: .editingChanged)
         
+        //start around 1900
+        startDatePicker.selectRow(126, inComponent: 0, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,12 +47,12 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     
     //MARK: Listeners
     @objc func amountTextFieldDidChange(_ textField: UITextField) {
-//        let curr = currencyPickerData[currencyPicker.selectedRow(inComponent: 0)]
         let curr = currencySegment.titleForSegment(at: currencySegment.selectedSegmentIndex)!
         if let amountString = textField.text?.currencyInputFormatting(currency: getIndexSymbol(curr:curr)[1]) {
             textField.text = amountString
         }
     }
+    
 //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 //        if pickerView==currencyPicker {
 //            //selected currency

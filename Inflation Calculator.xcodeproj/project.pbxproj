@@ -14,6 +14,7 @@
 		A917E5C320B08FC7001D6A98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A917E5C120B08FC7001D6A98 /* LaunchScreen.storyboard */; };
 		A917E5CF20B090AA001D6A98 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A917E5CE20B090AA001D6A98 /* ResultsTableViewController.swift */; };
 		A917E5D120B090C8001D6A98 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A917E5D020B090C8001D6A98 /* MainTableViewController.swift */; };
+		A9483FEA20B4AC4400DDE40B /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9483FE920B4AC4400DDE40B /* ChartViewController.swift */; };
 		A9C0121A20B2E87E00F35877 /* ConversionTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C0121920B2E87E00F35877 /* ConversionTables.swift */; };
 		A9C22B3720B0EFE800B610BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C22B3620B0EFE800B610BE /* Extensions.swift */; };
 		A9C22B3920B0FBE900B610BE /* ConversionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C22B3820B0FBE900B610BE /* ConversionHelper.swift */; };
@@ -31,6 +32,7 @@
 		A917E5C420B08FC7001D6A98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A917E5CE20B090AA001D6A98 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		A917E5D020B090C8001D6A98 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		A9483FE920B4AC4400DDE40B /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		A9C0121920B2E87E00F35877 /* ConversionTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTables.swift; sourceTree = "<group>"; };
 		A9C22B3620B0EFE800B610BE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A9C22B3820B0FBE900B610BE /* ConversionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionHelper.swift; sourceTree = "<group>"; };
@@ -80,12 +82,13 @@
 				A917E5B820B08FC6001D6A98 /* AppDelegate.swift */,
 				A917E5D020B090C8001D6A98 /* MainTableViewController.swift */,
 				A917E5CE20B090AA001D6A98 /* ResultsTableViewController.swift */,
+				A9483FE920B4AC4400DDE40B /* ChartViewController.swift */,
 				A9C22B3820B0FBE900B610BE /* ConversionHelper.swift */,
 				A9C0121920B2E87E00F35877 /* ConversionTables.swift */,
 				A9C22B3620B0EFE800B610BE /* Extensions.swift */,
 				A917E5BC20B08FC6001D6A98 /* Main.storyboard */,
-				A917E5BF20B08FC7001D6A98 /* Assets.xcassets */,
 				A917E5C120B08FC7001D6A98 /* LaunchScreen.storyboard */,
+				A917E5BF20B08FC7001D6A98 /* Assets.xcassets */,
 				A917E5C420B08FC7001D6A98 /* Info.plist */,
 			);
 			path = "Inflation Calculator";
@@ -112,7 +115,6 @@
 				A917E5B220B08FC6001D6A98 /* Frameworks */,
 				A917E5B320B08FC6001D6A98 /* Resources */,
 				909ABC27D1B6D3EC6DB1C486 /* [CP] Embed Pods Frameworks */,
-				DB5AE21EE90AF0B6DCE19C99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,31 +198,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Inflation Calculator/Pods-Inflation Calculator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftChart/SwiftChart.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftChart.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inflation Calculator/Pods-Inflation Calculator-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DB5AE21EE90AF0B6DCE19C99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inflation Calculator/Pods-Inflation Calculator-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -231,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9C22B3920B0FBE900B610BE /* ConversionHelper.swift in Sources */,
+				A9483FEA20B4AC4400DDE40B /* ChartViewController.swift in Sources */,
 				A917E5CF20B090AA001D6A98 /* ResultsTableViewController.swift in Sources */,
 				A9C22B3720B0EFE800B610BE /* Extensions.swift in Sources */,
 				A917E5D120B090C8001D6A98 /* MainTableViewController.swift in Sources */,
@@ -383,7 +373,11 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TNUJH53RR5;
 				INFOPLIST_FILE = "Inflation Calculator/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "vikings.Inflation-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b4bfa146-3bc0-41e4-99f3-bed6c497d571";
@@ -401,7 +395,11 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TNUJH53RR5;
 				INFOPLIST_FILE = "Inflation Calculator/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "vikings.Inflation-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b4bfa146-3bc0-41e4-99f3-bed6c497d571";
