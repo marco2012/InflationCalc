@@ -11,7 +11,9 @@ import UIKit
 class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     //MARK: UI elements
-    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!{
+        didSet { amountTextField?.addDoneCancelToolbar() }
+    }
 //    @IBOutlet weak var currencyPicker: UIPickerView!
     @IBOutlet weak var startDatePicker: UIPickerView!
     @IBOutlet weak var endDatePicker: UIPickerView!
