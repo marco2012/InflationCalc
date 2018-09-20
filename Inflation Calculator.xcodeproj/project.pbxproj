@@ -33,6 +33,7 @@
 		A917E5CE20B090AA001D6A98 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		A917E5D020B090C8001D6A98 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		A9483FE920B4AC4400DDE40B /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		A9803E1F21500A5C00288D76 /* Inflation Calculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Inflation Calculator.entitlements"; sourceTree = "<group>"; };
 		A9C0121920B2E87E00F35877 /* ConversionTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTables.swift; sourceTree = "<group>"; };
 		A9C22B3620B0EFE800B610BE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A9C22B3820B0FBE900B610BE /* ConversionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionHelper.swift; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		A917E5B720B08FC6001D6A98 /* Inflation Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				A9803E1F21500A5C00288D76 /* Inflation Calculator.entitlements */,
 				A917E5B820B08FC6001D6A98 /* AppDelegate.swift */,
 				A917E5D020B090C8001D6A98 /* MainTableViewController.swift */,
 				A917E5CE20B090AA001D6A98 /* ResultsTableViewController.swift */,
@@ -137,6 +139,14 @@
 				TargetAttributes = {
 					A917E5B420B08FC6001D6A98 = {
 						CreatedOnToolsVersion = 9.3.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -370,8 +380,9 @@
 			baseConfigurationReference = 8740BEF2C7A0B45D522C7FBD /* Pods-Inflation Calculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Inflation Calculator/Inflation Calculator.entitlements";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TNUJH53RR5;
+				DEVELOPMENT_TEAM = 5C456KB643;
 				INFOPLIST_FILE = "Inflation Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -392,8 +403,9 @@
 			baseConfigurationReference = 049161AF6754839C96BF5E4F /* Pods-Inflation Calculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Inflation Calculator/Inflation Calculator.entitlements";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TNUJH53RR5;
+				DEVELOPMENT_TEAM = 5C456KB643;
 				INFOPLIST_FILE = "Inflation Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
