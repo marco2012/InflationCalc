@@ -14,24 +14,26 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var amountTextField: UITextField!{
         didSet { amountTextField?.addDoneCancelToolbar() }
     }
-//    @IBOutlet weak var currencyPicker: UIPickerView!
     @IBOutlet weak var startDatePicker: UIPickerView!
     @IBOutlet weak var endDatePicker: UIPickerView!
     @IBOutlet weak var currencySegment: UISegmentedControl!
     
     //MARK: Data sources
-//    let currencyPickerData  = ["USD", "GBP", "ITL"]
+    var currentYear         = 2018
     var startPickerData     = [Int](1774...2018)
     var endPickerData       = Array([Int](1774...2018).reversed())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        currentYear         = Calendar.current.component(.year, from: Date())
+        startPickerData     = [Int](1774...currentYear)
+        endPickerData       = Array([Int](1774...currentYear).reversed())
+        
         //Hide keyboard on tap
         self.hideKeyboardWhenTappedAround()
         
         //Add data to currency picker
-//        currencyPicker.delegate     = self
         startDatePicker.delegate    = self
         endDatePicker.delegate      = self
         
@@ -44,7 +46,6 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: Listeners
@@ -55,23 +56,7 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         }
     }
     
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        if pickerView==currencyPicker {
-//            //selected currency
-//            let curr = currencyPickerData[row]
-//
-//            //change currency symbol in textview
-//            if let amountString = amountTextField.text?.currencyInputFormatting(currency: getIndexSymbol(curr:curr)[1]) {
-//                amountTextField.text = amountString
-//            }
-//            //change start date based on currency
-//            let startDate = Int(getIndexSymbol(curr: curr)[2])
-//            startPickerData     = [Int](startDate!...2018)
-//            startDatePicker.reloadAllComponents()
-//            endPickerData       = Array([Int](startDate!...2018).reversed())
-//            endDatePicker.reloadAllComponents()
-//        }
-//    }
+
     @IBAction func currencySegment(_ sender: UISegmentedControl) {
         //selected currency
         let curr = currencySegment.titleForSegment(at: currencySegment.selectedSegmentIndex)!
@@ -81,10 +66,10 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
             amountTextField.text = amountString
         }
         //change start date based on currency
-        let startDate = Int(getIndexSymbol(curr: curr)[2])
-        startPickerData     = [Int](startDate!...2018)
+        let startDate       = Int(getIndexSymbol(curr: curr)[2])
+        startPickerData     = [Int](startDate!...currentYear)
         startDatePicker.reloadAllComponents()
-        endPickerData       = Array([Int](startDate!...2018).reversed())
+        endPickerData       = Array([Int](startDate!...currentYear).reversed())
         endDatePicker.reloadAllComponents()
     }
     
@@ -183,7 +168,6 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
             let end = String(endPickerData[endDatePicker.selectedRow(inComponent: 0)])
             
             let amount  = String((amountTextField.text?.replacingOccurrences(of: "\\.", with: "", options: .regularExpression).dropFirst(1))!)
-//            let curr    = currencyPickerData[currencyPicker.selectedRow(inComponent: 0)]
             let curr = currencySegment.titleForSegment(at: currencySegment.selectedSegmentIndex)!
             let indice  = getIndexSymbol(curr:curr)[0]
             let symbol  = getIndexSymbol(curr:curr)[1]
