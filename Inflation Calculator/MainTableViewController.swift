@@ -165,7 +165,10 @@ class MainTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
             let start = String(startPickerData[startDatePicker.selectedRow(inComponent: 0)])
-            let end = String(endPickerData[endDatePicker.selectedRow(inComponent: 0)])
+            var end = String(endPickerData[endDatePicker.selectedRow(inComponent: 0)])
+            if (Int(end) ?? 2018 > 2018) {
+                end = "2018"
+            }
             
             let amount  = String((amountTextField.text?.replacingOccurrences(of: "\\.", with: "", options: .regularExpression).dropFirst(1))!)
             let curr = currencySegment.titleForSegment(at: currencySegment.selectedSegmentIndex)!

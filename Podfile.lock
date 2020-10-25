@@ -9,7 +9,7 @@ DEPENDENCIES:
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - SwiftChart
     - SwiftyJSON
@@ -21,4 +21,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 515130f5c0de3357867f923ad12686ba527ca92e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3

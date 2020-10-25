@@ -28,6 +28,7 @@ extension Double {
 }
 
 extension String{
+    
     func trim() -> String{
         return self.replacingOccurrences(of: " ", with: "", options: .regularExpression)
     }
@@ -58,6 +59,7 @@ extension String{
         
         return formatter.string(from: number)!
     }
+
 }
 
 extension Date {

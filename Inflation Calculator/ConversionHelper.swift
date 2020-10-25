@@ -13,6 +13,8 @@ import SwiftyJSON
 struct conversion {
     
     static func calcInflation(start:String, end:String, currency:String, amount:String) -> Double{
+        
+        let amount = amount.replacingOccurrences(of: "[£$₤]", with: "", options: .regularExpression, range: nil).trimmingCharacters(in: .whitespaces)
 
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
@@ -48,12 +50,14 @@ struct conversion {
     
     static func toEur(currency:String, amountWithInflation:String, completionHandler: @escaping ((Double) -> Void)) {
         let amount = Double(amountWithInflation.trim())
-        let url = "http://free.currencyconverterapi.com/api/v5/convert?q=\(currency)_EUR&compact=y"
+        // let url = "http://free.currencyconverterapi.com/api/v5/convert?q=\(currency)_EUR&compact=y"
+        let url = "https://free.currconv.com/api/v7/convert?q=\(currency)_EUR&compact=ultra&apiKey=725d96492ace13f2a312"
         var eur = 0.0
         Alamofire.request(url).responseJSON { response in
             if let json = response.result.value {
-                let fattore = (JSON(json)["\(currency)_EUR"]["val"]).double
-                eur = Double((amount! * fattore!).rounded(toPlaces: 2))
+                print(JSON(json))
+                let fattore = (JSON(json)["\(currency)_EUR"]).double
+                eur = Double((amount! * (fattore ?? 0.0)).rounded(toPlaces: 2))
                 completionHandler(eur)
             }
         }
